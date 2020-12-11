@@ -25,9 +25,31 @@ module.exports = {
     ecmaVersion: 12,
   },
   rules: {
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
+    ],
     '@typescript-eslint/no-useless-constructor': 'error',
+    '@typescript-eslint/no-var-requires': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton'],
+      },
+    ],
     'jsx-a11y/href-no-hash': ['off'],
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': ['off'],
@@ -38,9 +60,9 @@ module.exports = {
         allow: ['warn', 'error'],
       },
     ],
-    'multiline-ternary': 0,
-    'no-unused-vars': 'off',
     'no-shadow': 0,
+    'no-unused-vars': 'off',
+    'multiline-ternary': 0,
     'no-useless-constructor': 'off',
     'import/extensions': [
       'error',
@@ -67,4 +89,4 @@ module.exports = {
       },
     ],
   },
-};
+}
