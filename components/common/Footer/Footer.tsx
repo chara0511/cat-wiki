@@ -1,9 +1,18 @@
+import Link from 'next/Link'
+import CatwikiLogo from 'public/CatwikiLogo'
 import s from './Footer.module.css'
 
 const Footer = () => {
   return (
-    <footer className={s.container}>
-      <span>Logo</span>
+    <footer className={s.content}>
+      <Link href="/">
+        <a>
+          <span>
+            <CatwikiLogo />
+          </span>
+        </a>
+      </Link>
+
       <p>Chara- devchallenges.io 2020</p>
     </footer>
   )

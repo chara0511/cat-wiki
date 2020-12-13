@@ -1,10 +1,18 @@
+import Link from 'next/Link'
+import CatwikiLogo from 'public/CatwikiLogo'
 import s from './Header.module.css'
 
 const Header = () => {
   return (
-    <div className={s.container}>
-      <span>Logo</span>
-    </div>
+    <header className={s.content}>
+      <Link href="/">
+        <a>
+          <span>
+            <CatwikiLogo />
+          </span>
+        </a>
+      </Link>
+    </header>
   )
 }
 
