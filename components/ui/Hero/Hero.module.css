@@ -2,3 +2,8 @@
   border: 1px solid green;
   width: 100%;
 }
+
+.heroBackground {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}

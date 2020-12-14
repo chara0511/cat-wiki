@@ -1,11 +1,18 @@
 import Link from 'next/Link'
+import Image from 'next/image'
 import s from './Hero.module.css'
 
 const Hero = () => {
   return (
     <div className={s.container}>
       <div>
-        <span>Logo</span>
+        <Image
+          className={s.heroBackground}
+          src="/HeroImagesm.png"
+          alt="Picture of the hero"
+          width={375}
+          height={180}
+        />
         <p>Get to know more about your cat breed</p>
         <input type="text" placeholder="search" />
       </div>

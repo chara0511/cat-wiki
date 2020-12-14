@@ -9,7 +9,7 @@ const Section = () => {
           Having a cat around you can actually trigger the release of calming chemicals in your body
           which lower your stress and anxiety levels
         </p>
-        <a href="https://wwww.google.com.pe" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.google.com.pe" target="_blank" rel="noopener noreferrer">
           Read More -{'>'}
         </a>
       </div>
