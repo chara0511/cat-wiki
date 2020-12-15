@@ -1,0 +1,80 @@
+@import '../../../styles/theme.scss';
+
+.content {
+  border: 1px solid green;
+  width: 100%;
+}
+
+.header {
+  position: relative;
+}
+
+.headerBackground {
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+}
+
+.headerContent {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+  width: 50%;
+  color: $white;
+  padding: 0 0.75rem;
+
+  & p {
+    font-weight: 500;
+    font-size: $xxs;
+    line-height: $xs;
+    margin: 0.25rem 0 1.25rem 0;
+  }
+
+  & svg {
+    width: 70%;
+  }
+
+  & div {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 14px 8px 14px;
+    background-color: $white;
+    color: $black;
+    border-radius: 1.5rem;
+    width: max-content;
+
+    & input {
+      width: 50px;
+      font-size: $xs;
+      font-weight: 500;
+      line-height: 14px;
+      border: none;
+      color: $cannonBlack;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $cannonBlack;
+        font-weight: 500;
+      }
+    }
+
+    & span {
+      margin-left: 12px;
+    }
+  }
+}
+
+.body {
+  background-color: $westar;
+  padding: 0.75rem 1.5rem;
+  border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+
+  & span {
+    font-size: $xs;
+    font-weight: 500;
+    line-height: 14px;
+  }
+}
