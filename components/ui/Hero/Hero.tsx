@@ -1,4 +1,4 @@
-import Link from 'next/Link'
+import Link from 'next/link'
 import Image from 'next/image'
 import CatwikiLogo from 'public/CatwikiLogo'
 import s from './Hero.module.scss'
