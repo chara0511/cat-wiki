@@ -1,4 +1,5 @@
-import s from './Section.module.css'
+import Image from 'next/image'
+import s from './Section.module.scss'
 
 const Section = () => {
   return (
@@ -14,7 +15,17 @@ const Section = () => {
         </a>
       </div>
 
-      <div>image</div>
+      <div className={s.grid}>
+        <div className={s.item1}>
+          <Image src="/image 2.png" width={270} height={165} alt="Spoiled cat" />
+        </div>
+        <div className={s.item2}>
+          <Image src="/image 3.png" width={260} height={380} alt="Cat in the bag" />
+        </div>
+        <div className={s.item3}>
+          <Image src="/image 1.png" alt="Cat's claw" width={200} height={300} />
+        </div>
+      </div>
     </div>
   )
 }

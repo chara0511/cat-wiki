@@ -7,11 +7,12 @@
 
 .header {
   position: relative;
+  display: flex;
 }
 
 .headerBackground {
-  border-top-left-radius: 2.5rem;
-  border-top-right-radius: 2.5rem;
+  border-top-left-radius: $lgRounded;
+  border-top-right-radius: $lgRounded;
 }
 
 .headerContent {
@@ -69,8 +70,8 @@
 .body {
   background-color: $westar;
   padding: 0.75rem 1.5rem;
-  border-bottom-left-radius: 2.5rem;
-  border-bottom-right-radius: 2.5rem;
+  border-bottom-left-radius: $lgRounded;
+  border-bottom-right-radius: $lgRounded;
 
   & span {
     font-size: $xs;
@@ -78,8 +79,14 @@
     line-height: 14px;
   }
 
-  & h2 {
+  & h2,
+  a {
     font-size: $xs;
+  }
+
+  a {
+    text-align: center;
+    display: block;
   }
 }
 
@@ -87,6 +94,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: $xs;
+  row-gap: $sm;
   margin: 1rem 0;
 }
 

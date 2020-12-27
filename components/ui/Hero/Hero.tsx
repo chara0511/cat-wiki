@@ -43,12 +43,13 @@ const Hero: FC<Props> = ({ fourRandom }) => {
           {fourRandom.map((cat) => (
             <div key={cat.id}>
               <Image
-                src={cat.image.url}
+                src={cat.image?.url}
                 alt={cat.alt_names}
                 width={135}
                 height={135}
                 className={s.rounded}
                 objectFit="cover"
+                quality={50}
               />
               <h2>{cat.name}</h2>
             </div>
@@ -56,7 +57,7 @@ const Hero: FC<Props> = ({ fourRandom }) => {
         </div>
 
         <Link href="/breeds/popular">
-          <a>see more</a>
+          <a>See more</a>
         </Link>
       </div>
     </div>

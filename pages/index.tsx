@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { Hero, Section } from '@components/ui'
-import styles from '../styles/Home.module.css'
 
 export interface BreedsModel {
   id: string
@@ -16,10 +15,10 @@ interface Breeds {
 
 const Home: FC<Breeds> = ({ fourRandom }) => {
   return (
-    <div className={styles.container}>
+    <>
       <Hero fourRandom={fourRandom} />
       <Section />
-    </div>
+    </>
   )
 }
 

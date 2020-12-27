@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import CatwikiLogo from 'public/CatwikiLogo'
-import s from './Footer.module.css'
+import s from './Footer.module.scss'
 
 const Footer = () => {
   return (
