@@ -1,17 +1,17 @@
 @import '@styles/theme.scss';
+@import '@styles/mixins.scss';
 
 .content {
-  align-items: center;
+  @include flexBetween;
+
   background-color: $black;
   border: 1px solid red;
   border-top-left-radius: $lgRounded;
   border-top-right-radius: $lgRounded;
   color: $white;
-  display: flex;
-  justify-content: space-between;
   padding: 0.5rem 1.5rem;
   height: 100px;
-  margin: 0 1rem;
+  width: 100%;
 
   & p {
     font-size: 0.75rem;

@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { GetStaticProps } from 'next'
 import { Hero, Section } from '@components/ui'
 
 export interface BreedsModel {
@@ -24,8 +25,8 @@ const Home: FC<Breeds> = ({ fourRandom }) => {
 
 export default Home
 
-export const getStaticProps = async () => {
-  const data = await fetch('https://api.thecatapi.com/v1/breeds')
+export const getStaticProps: GetStaticProps = async () => {
+  const data: BreedsModel[] = await fetch('https://api.thecatapi.com/v1/breeds')
     .then((res) => res.json())
     .then((data) => data)
     .catch((err) => err)

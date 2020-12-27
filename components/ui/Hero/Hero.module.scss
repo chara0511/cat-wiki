@@ -1,4 +1,5 @@
 @import '@styles/theme.scss';
+@import '@styles/mixins.scss';
 
 .content {
   border: 1px solid green;
@@ -35,8 +36,8 @@
   }
 
   & div {
-    display: flex;
-    justify-content: space-between;
+    @include flexBetween;
+
     padding: 8px 14px 8px 14px;
     background-color: $white;
     color: $black;

@@ -13,7 +13,7 @@ const Footer = () => {
         </a>
       </Link>
 
-      <p>Chara- devchallenges.io 2020</p>
+      <p>Coded by Chara- 2020</p>
     </footer>
   )
 }

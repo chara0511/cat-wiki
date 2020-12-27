@@ -1,16 +1,17 @@
+@import '@styles/mixins.scss';
+
 .mainContainer {
+  @include flexCenter;
+
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 0 1rem;
 }
 
 .container {
+  @include flexCenter;
+
   flex: 1;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
