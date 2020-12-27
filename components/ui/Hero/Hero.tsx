@@ -1,15 +1,15 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { BreedsModel } from 'pages'
+import { BreedModel } from 'pages'
 import CatwikiLogo from 'public/CatwikiLogo'
 import s from './Hero.module.scss'
 
 interface Props {
-  fourRandom: BreedsModel[]
+  fourBreeds: BreedModel[]
 }
 
-const Hero: FC<Props> = ({ fourRandom }) => {
+const Hero: FC<Props> = ({ fourBreeds }) => {
   return (
     <div className={s.content}>
       <div className={s.header}>
@@ -36,27 +36,30 @@ const Hero: FC<Props> = ({ fourRandom }) => {
       </div>
 
       <div className={s.body}>
-        <span>Most Searched Breeds</span>
+        <Link href="/breeds/popular">
+          <a>Most Searched Breeds</a>
+        </Link>
+
         <h1>66+ Breeds For you to discover</h1>
 
         <div className={s.grid}>
-          {fourRandom.map((cat) => (
-            <div key={cat.id}>
+          {fourBreeds.map((catBreed) => (
+            <div key={catBreed.id}>
               <Image
-                src={cat.image?.url}
-                alt={cat.alt_names}
+                src={catBreed.image?.url}
+                alt={catBreed.alt_names}
                 width={135}
                 height={135}
                 className={s.rounded}
                 objectFit="cover"
                 quality={50}
               />
-              <h2>{cat.name}</h2>
+              <h2>{catBreed.name}</h2>
             </div>
           ))}
         </div>
 
-        <Link href="/breeds/popular">
+        <Link href="/breeds">
           <a>See more</a>
         </Link>
       </div>

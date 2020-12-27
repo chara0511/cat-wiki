@@ -74,20 +74,19 @@
   border-bottom-left-radius: $lgRounded;
   border-bottom-right-radius: $lgRounded;
 
-  & span {
-    font-size: $xs;
-    font-weight: 500;
-    line-height: 14px;
-  }
-
   & h2,
   a {
     font-size: $xs;
   }
 
   a {
-    text-align: center;
     display: block;
+    font-weight: 500;
+    line-height: 14px;
+
+    &:nth-last-child(1) {
+      text-align: center;
+    }
   }
 }
 

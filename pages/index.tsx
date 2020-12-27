@@ -2,22 +2,24 @@ import { FC } from 'react'
 import { GetStaticProps } from 'next'
 import { Hero, Section } from '@components/ui'
 
-export interface BreedsModel {
+export interface BreedModel {
+  // eslint-disable-next-line camelcase
+  alt_names: string
+  description: string
   id: string
   image: { url: string }
   name: string
-  // eslint-disable-next-line camelcase
-  alt_names: string
 }
 
-interface Breeds {
-  fourRandom: BreedsModel[]
+export interface Breeds {
+  fourBreeds: BreedModel[]
+  breeds: BreedModel[]
 }
 
-const Home: FC<Breeds> = ({ fourRandom }) => {
+const Home: FC<Breeds> = ({ fourBreeds }) => {
   return (
     <>
-      <Hero fourRandom={fourRandom} />
+      <Hero fourBreeds={fourBreeds} />
       <Section />
     </>
   )
@@ -26,22 +28,22 @@ const Home: FC<Breeds> = ({ fourRandom }) => {
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data: BreedsModel[] = await fetch('https://api.thecatapi.com/v1/breeds')
+  const breeds: BreedModel[] = await fetch('https://api.thecatapi.com/v1/breeds')
     .then((res) => res.json())
     .then((data) => data)
     .catch((err) => err)
 
-  if (!data) {
+  if (!breeds) {
     return { notFound: true }
   }
 
   const randomInt = (random: number, min: number, max: number) =>
     Math.floor(random * (max - min) + min)
 
-  const first = data[randomInt(Math.random(), 0, 67)]
-  const second = data[randomInt(Math.random(), 0, 67)]
-  const third = data[randomInt(Math.random(), 0, 67)]
-  const fourth = data[randomInt(Math.random(), 0, 67)]
+  const first = breeds[randomInt(Math.random(), 0, 67)]
+  const second = breeds[randomInt(Math.random(), 0, 67)]
+  const third = breeds[randomInt(Math.random(), 0, 67)]
+  const fourth = breeds[randomInt(Math.random(), 0, 67)]
 
-  return { props: { fourRandom: [first, second, third, fourth] } }
+  return { props: { fourBreeds: [first, second, third, fourth] } }
 }
