@@ -1,4 +1,4 @@
-@import '../../../styles/theme.scss';
+@import '@styles/theme.scss';
 
 .content {
   border: 1px solid green;
@@ -22,15 +22,15 @@
   color: $white;
   padding: 0 0.75rem;
 
+  & span svg {
+    width: 70%;
+  }
+
   & p {
     font-weight: 500;
     font-size: $xxs;
     line-height: $xs;
     margin: 0.25rem 0 1.25rem 0;
-  }
-
-  & svg {
-    width: 70%;
   }
 
   & div {
@@ -77,4 +77,20 @@
     font-weight: 500;
     line-height: 14px;
   }
+
+  & h2 {
+    font-size: $xs;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $xs;
+  margin: 1rem 0;
+}
+
+.rounded {
+  border-radius: $smRounded;
+  border: 1px solid red;
 }
