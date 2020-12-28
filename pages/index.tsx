@@ -1,22 +1,15 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { GetStaticProps } from 'next'
 import { Hero, Section } from '@components/ui'
+import { BreedModel, Breeds, useViewsContext } from '@components/views/context'
 
-export interface BreedModel {
-  // eslint-disable-next-line camelcase
-  alt_names: string
-  description: string
-  id: string
-  image: { url: string }
-  name: string
-}
+const Home: FC<Breeds> = ({ breeds, fourBreeds }) => {
+  const { getBreeds } = useViewsContext()
 
-export interface Breeds {
-  fourBreeds: BreedModel[]
-  breeds: BreedModel[]
-}
+  useEffect(() => {
+    getBreeds(breeds)
+  }, [])
 
-const Home: FC<Breeds> = ({ fourBreeds }) => {
   return (
     <>
       <Hero fourBreeds={fourBreeds} />
@@ -45,5 +38,5 @@ export const getStaticProps: GetStaticProps = async () => {
   const third = breeds[randomInt(Math.random(), 0, 67)]
   const fourth = breeds[randomInt(Math.random(), 0, 67)]
 
-  return { props: { fourBreeds: [first, second, third, fourth] } }
+  return { props: { breeds, fourBreeds: [first, second, third, fourth] } }
 }

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { BreedModel } from 'pages'
+import { BreedModel } from '@components/views/context'
 import CatwikiLogo from 'public/CatwikiLogo'
 import s from './Hero.module.scss'
 
@@ -46,7 +46,7 @@ const Hero: FC<Props> = ({ fourBreeds }) => {
           {fourBreeds.map((catBreed) => (
             <div key={catBreed.id}>
               <Image
-                src={catBreed.image?.url}
+                src={catBreed.image.url}
                 alt={catBreed.alt_names}
                 width={135}
                 height={135}

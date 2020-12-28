@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import { BreedModel } from 'pages'
+import { BreedModel } from '../context'
 
 interface Props {
   breeds: BreedModel[]
