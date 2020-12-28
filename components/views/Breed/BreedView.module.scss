@@ -1,0 +1,45 @@
+@import '@styles/theme.scss';
+@import '@styles/mixins.scss';
+
+.content {
+  border: 1px solid red;
+  padding: 2rem 0;
+}
+
+.body {
+  @include flexCenter;
+
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid blue;
+
+  @include md {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.bodyImage {
+  border: 1px solid yellow;
+  flex: 0 320px;
+}
+
+.rounded {
+  border-radius: $mdRounded;
+}
+
+.bodyDescription {
+  flex: 1;
+}
+
+.footer {
+  border: 1px solid green;
+}
+
+.footerPhotos {
+  border: 1px solid pink;
+
+  @include flexCenter;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

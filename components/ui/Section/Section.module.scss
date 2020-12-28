@@ -1,6 +1,8 @@
 @import '@styles/theme.scss';
 
-.container {
+.content {
+  padding: 1rem 0 2rem;
+
   & h2 {
     font-size: $xxl;
     font-weight: 700;

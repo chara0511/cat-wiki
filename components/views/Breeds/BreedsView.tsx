@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import { BreedModel } from '../context'
+import s from './BreedsView.module.scss'
 
 interface Props {
   breeds: BreedModel[]
@@ -8,10 +9,10 @@ interface Props {
 
 const BreedsView: FC<Props> = ({ breeds }) => {
   return (
-    <div>
+    <div className={s.content}>
       <h1>List the Cat Breeds</h1>
 
-      <div>
+      <div className={s.grid}>
         {breeds.map((catBreed, i: number) => (
           <div key={catBreed.id}>
             <Link href={`/breeds/${catBreed.id}`}>
@@ -21,12 +22,8 @@ const BreedsView: FC<Props> = ({ breeds }) => {
                 </h2>
               </a>
             </Link>
-
-            <p>{catBreed.description}</p>
           </div>
         ))}
-
-        <div>image</div>
       </div>
     </div>
   )

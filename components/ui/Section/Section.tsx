@@ -3,7 +3,7 @@ import s from './Section.module.scss'
 
 const Section = () => {
   return (
-    <div className={s.container}>
+    <div className={s.content}>
       <div>
         <h2>Why should you have a cat?</h2>
         <p>
