@@ -5,6 +5,7 @@ export interface BreedModel {
   alt_names: string
   description: string
   id: string
+  url: string
   image: { url: string }
   name: string
   temperament: string

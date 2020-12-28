@@ -1,18 +1,28 @@
 import { FC } from 'react'
-import { Breed } from '../context'
+import Image from 'next/image'
+import { Breed, BreedModel, Breeds } from '../context'
 
 interface Props {
-  breed: Breed
+  breed: Breeds | any
 }
 
 const BreedView: FC<Props> = ({ breed }) => {
+  const { breeds, url }: Breed = breed[0]
+
   return (
     <div>
       <div>
         <div>
-          <img style={{ width: '300px' }} src={breed.url} alt="" />
+          <Image
+            src={url}
+            alt="Breed cat"
+            width={375}
+            height={375}
+            objectFit="contain"
+            quality={50}
+          />
         </div>
-        {breed.breeds.map((catBreed) => (
+        {breeds.map((catBreed) => (
           <div key={catBreed.id}>
             <h1>{catBreed.name}</h1>
             <p>{catBreed.description}</p>
@@ -50,14 +60,20 @@ const BreedView: FC<Props> = ({ breed }) => {
 
       <div>
         <h2>Other Photos</h2>
-        <div>
-          <div>image1</div>
-          <div>image2</div>
-          <div>image3</div>
-          <div>image4</div>
-          <div>image5</div>
-          <div>image6</div>
-        </div>
+        {/* 278x278 */}
+
+        {breed.map((b: BreedModel) => (
+          <div key={b.id}>
+            <Image
+              src={b.url}
+              alt="Breed cat"
+              width={280}
+              height={280}
+              objectFit="contain"
+              quality={50}
+            />
+          </div>
+        ))}
       </div>
     </div>
   )
