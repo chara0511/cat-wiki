@@ -1,22 +1,40 @@
+/* eslint-disable camelcase */
 import { createContext, FC, useContext, useEffect, useMemo, useReducer } from 'react'
 
 export interface BreedModel {
-  // eslint-disable-next-line camelcase
   alt_names: string
   description: string
   id: string
   image: { url: string }
   name: string
+  temperament: string
+  origin: string
+  life_span: string
+  adaptability: number
+  affection_level: number
+  child_friendly: number
+  grooming: number
+  intelligence: number
+  health_issues: number
+  social_needs: number
+  stranger_friendly: number
+}
+
+export interface Breed {
+  breeds: BreedModel[]
+  url: string
 }
 
 export interface Breeds {
   breeds: BreedModel[] | []
   fourBreeds: BreedModel[] | []
+  breed: Breed | any
 }
 
 const initialState: Breeds = {
   breeds: [],
   fourBreeds: [],
+  breed: [],
 }
 
 type Action = { type: 'GET_BREEDS'; payload: BreedModel[] }
