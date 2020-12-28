@@ -1,4 +1,4 @@
-import { createContext, FC, useContext, useMemo, useReducer } from 'react'
+import { createContext, FC, useContext, useEffect, useMemo, useReducer } from 'react'
 
 export interface BreedModel {
   // eslint-disable-next-line camelcase
@@ -31,10 +31,26 @@ const viewReducer = (state: typeof initialState, action: Action) => {
   }
 }
 
+const persistedState: string | null = 'breeds'
+
+const init = () => {
+  let preloadedState
+  try {
+    preloadedState = JSON.parse(window.localStorage.getItem(persistedState) || '')
+  } catch (e) {
+    // ignore
+  }
+  return preloadedState || initialState
+}
+
 const ViewsContext = createContext<Breeds | any>(initialState)
 
 const ViewsProvider: FC = (props) => {
-  const [state, dispatch] = useReducer(viewReducer, initialState)
+  const [state, dispatch] = useReducer(viewReducer, initialState, init)
+
+  useEffect(() => {
+    localStorage.setItem('breeds', JSON.stringify(state))
+  }, [state])
 
   const getBreeds = (breeds: BreedModel[]) => dispatch({ type: 'GET_BREEDS', payload: breeds })
 
