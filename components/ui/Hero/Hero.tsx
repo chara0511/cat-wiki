@@ -13,13 +13,15 @@ const Hero: FC<Props> = ({ fourBreeds }) => {
   return (
     <div className={s.content}>
       <div className={s.header}>
-        <Image
-          className={s.headerBackground}
-          src="/HeroImagesm.png"
-          alt="Picture of the hero"
-          width={375}
-          height={180}
-        />
+        <div className={s.headerImage}>
+          <Image
+            className={s.headerImageBg}
+            src="/HeroImagemd.png"
+            alt="Picture of the hero"
+            width={1280}
+            height={540}
+          />
+        </div>
 
         <div className={s.headerContent}>
           <span>
@@ -37,31 +39,35 @@ const Hero: FC<Props> = ({ fourBreeds }) => {
 
       <div className={s.body}>
         <Link href="/breeds/popular">
-          <a>Most Searched Breeds</a>
+          <a className={s.popularBreedsLink}>Most Searched Breeds -&gt;</a>
         </Link>
 
         <h1>66+ Breeds For you to discover</h1>
 
+        <Link href="/breeds">
+          <a className={s.breedsLink}>See more -&gt;</a>
+        </Link>
+
         <div className={s.grid}>
           {fourBreeds.map((catBreed) => (
-            <div key={catBreed.id}>
-              <Image
-                src={catBreed.image.url}
-                alt={catBreed.alt_names}
-                width={135}
-                height={135}
-                className={s.rounded}
-                objectFit="cover"
-                quality={50}
-              />
-              <h2>{catBreed.name}</h2>
-            </div>
+            <Link href={`/breeds/${catBreed.id}`} key={catBreed.id}>
+              <a>
+                <div>
+                  <Image
+                    src={catBreed.image.url}
+                    alt={catBreed.alt_names}
+                    width={220}
+                    height={220}
+                    className={s.rounded}
+                    objectFit="cover"
+                    quality={50}
+                  />
+                  <h2>{catBreed.name}</h2>
+                </div>
+              </a>
+            </Link>
           ))}
         </div>
-
-        <Link href="/breeds">
-          <a>See more</a>
-        </Link>
       </div>
     </div>
   )

@@ -30,13 +30,13 @@ export const getStaticProps: GetStaticProps = async () => {
     return { notFound: true }
   }
 
-  const randomInt = (random: number, min: number, max: number) =>
-    Math.floor(random * (max - min) + min)
+  // const randomInt = (random: number, min: number, max: number) =>
+  //   Math.floor(random * (max - min) + min)
 
-  const first = breeds[randomInt(Math.random(), 0, 67)]
-  const second = breeds[randomInt(Math.random(), 0, 67)]
-  const third = breeds[randomInt(Math.random(), 0, 67)]
-  const fourth = breeds[randomInt(Math.random(), 0, 67)]
+  const first = breeds[10]
+  const second = breeds[53]
+  const third = breeds[45]
+  const fourth = breeds[55]
 
   return { props: { breeds, fourBreeds: [first, second, third, fourth] } }
 }

@@ -25,7 +25,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const breed = await fetch(
-    `https://api.thecatapi.com/v1/images/search?limit=6&breed_ids=${params!.id}`,
+    `https://api.thecatapi.com/v1/images/search?limit=8&breed_ids=${params!.id}`,
   )
     .then((res) => res.json())
     .then((data) => data)

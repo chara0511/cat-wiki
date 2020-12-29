@@ -22,7 +22,18 @@
 }
 
 .bodyImage {
-  flex: 0 375px;
+  flex: 0 250px;
+  width: 250px;
+
+  @include sm {
+    flex: 0 300px;
+    width: 300px;
+  }
+
+  @include lg {
+    flex: 0 375px;
+    width: 375px;
+  }
 }
 
 .rounded {
@@ -64,6 +75,10 @@
 
     @include md {
       flex: 0 150px;
+    }
+
+    @include lg {
+      flex: 0 200px;
     }
   }
 

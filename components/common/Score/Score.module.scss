@@ -14,10 +14,14 @@
 
 .score,
 .scored {
-  width: 60px;
+  width: 50px;
   height: 12px;
   border-radius: $smRounded;
   margin-right: 0.5rem;
+
+  @include lg {
+    width: 60px;
+  }
 }
 
 .score {
