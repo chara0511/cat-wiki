@@ -5,7 +5,7 @@
 }
 
 @mixin flexLeft {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   justify-content: left;
 }

@@ -6,6 +6,16 @@
   min-height: 100vh;
   flex-direction: column;
   padding: 0 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  @include sm {
+    padding: 0 2rem;
+  }
+
+  @include lg {
+    padding: 0 4rem;
+  }
 }
 
 .container {

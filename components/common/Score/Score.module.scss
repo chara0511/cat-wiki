@@ -1,0 +1,29 @@
+@import '@styles/theme.scss';
+@import '@styles/mixins.scss';
+
+.content {
+  @include flexLeft;
+
+  flex-direction: row;
+  margin: 0.5rem auto;
+
+  @include md {
+    margin: 0.5rem 0;
+  }
+}
+
+.score,
+.scored {
+  width: 60px;
+  height: 12px;
+  border-radius: $smRounded;
+  margin-right: 0.5rem;
+}
+
+.score {
+  background-color: $chineseWhite;
+}
+
+.scored {
+  background-color: $kabul;
+}

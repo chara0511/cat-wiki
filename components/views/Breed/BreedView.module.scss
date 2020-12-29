@@ -2,7 +2,6 @@
 @import '@styles/mixins.scss';
 
 .content {
-  border: 1px solid red;
   padding: 2rem 0;
 }
 
@@ -11,17 +10,19 @@
 
   flex-direction: column;
   gap: 1rem;
-  border: 1px solid blue;
 
   @include md {
     flex-direction: row;
-    gap: 2rem;
+    gap: 3rem;
+  }
+
+  @include lg {
+    gap: 6rem;
   }
 }
 
 .bodyImage {
-  border: 1px solid yellow;
-  flex: 0 320px;
+  flex: 0 375px;
 }
 
 .rounded {
@@ -30,16 +31,58 @@
 
 .bodyDescription {
   flex: 1;
+  margin-bottom: 1rem;
+
+  & h1 {
+    font-size: $xl;
+    font-weight: 44px;
+    font-weight: 600;
+  }
+
+  & p {
+    font-size: $md;
+    line-height: 22px;
+    font-weight: 500;
+  }
+}
+
+.skill {
+  @include flexLeft;
+
+  flex-direction: column;
+  margin-top: 1rem;
+
+  @include md {
+    flex-direction: row;
+  }
+
+  & > span {
+    font-size: $sm;
+    font-weight: 20px;
+    font-weight: 700;
+    margin-right: 0.5rem;
+
+    @include md {
+      flex: 0 150px;
+    }
+  }
+
+  & > p {
+    font-size: $sm;
+
+    @include md {
+      flex: 1;
+    }
+  }
 }
 
 .footer {
-  border: 1px solid green;
+  text-align: center;
 }
 
 .footerPhotos {
-  border: 1px solid pink;
-
   @include flexCenter;
+
   flex-wrap: wrap;
   gap: 1rem;
 }
