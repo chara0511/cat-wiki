@@ -10,6 +10,12 @@
   justify-content: left;
 }
 
+@mixin flexRight {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
 @mixin flexBetween {
   align-items: center;
   display: flex;

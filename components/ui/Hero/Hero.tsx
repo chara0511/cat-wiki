@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { BreedModel } from '@components/views/context'
 import CatwikiLogo from 'public/CatwikiLogo'
-import { SearchIcon } from '@components/icons'
+import { ArrowIcon } from '@components/icons'
+import { SearchBar } from '@components/common'
 import s from './Hero.module.scss'
 
 interface Props {
@@ -31,24 +32,22 @@ const Hero: FC<Props> = ({ fourBreeds }) => {
 
           <p className={s.description}>Get to know more about your cat breed</p>
 
-          <div className={s.search}>
-            <input type="text" placeholder="Enter your breed" />
-            <span>
-              <SearchIcon />
-            </span>
-          </div>
+          <SearchBar />
         </div>
       </div>
 
       <div className={s.body}>
-        <Link href="/breeds/popular">
-          <a className={s.popularBreedsLink}>Most Searched Breeds -&gt;</a>
-        </Link>
+        <h1 className={s.subTitle}>Most Searched Breeds </h1>
 
-        <h1>66+ Breeds For you to discover</h1>
+        <h2 className={s.title}>66+ Breeds For you to discover</h2>
 
         <Link href="/breeds">
-          <a className={s.breedsLink}>See more -&gt;</a>
+          <a className={s.breedsLink}>
+            <span>see more</span>{' '}
+            <span>
+              <ArrowIcon />
+            </span>
+          </a>
         </Link>
 
         <div className={s.grid}>

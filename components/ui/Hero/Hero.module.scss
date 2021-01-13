@@ -84,56 +84,6 @@
   }
 }
 
-.search {
-  @include flexBetween;
-
-  padding: 6px 14px;
-  background-color: $white;
-  color: $black;
-  border-radius: 1.5rem;
-  width: max-content;
-
-  & > input {
-    width: 50px;
-    font-size: $xs;
-    font-weight: 500;
-    line-height: 14px;
-    border: none;
-    color: $cannonBlack;
-
-    &:focus {
-      outline: none;
-    }
-
-    &::placeholder {
-      color: $cannonBlack;
-      font-weight: 500;
-    }
-  }
-
-  @include md {
-    padding: 12px 18px;
-    width: 250px;
-    height: 50px;
-    border-radius: 30px;
-
-    & > input {
-      width: 100%;
-    }
-  }
-
-  @include xl {
-    padding: 24px 28px;
-    width: 400px;
-    height: 70px;
-    border-radius: 60px;
-  }
-
-  & > span {
-    margin-left: 12px;
-  }
-}
-
 .body {
   background-color: $westar;
   padding: 0.75rem 1.5rem;
@@ -147,34 +97,34 @@
   @include lg {
     padding: 1.25rem 5rem;
   }
+}
 
-  & h1 {
-    font-weight: 700;
-    font-size: $md;
-    line-height: 21px;
-    max-width: 190px;
+.title {
+  font-weight: 700;
+  font-size: $md;
+  line-height: 21px;
+  max-width: 190px;
 
-    @include sm {
-      font-size: $lg;
-      line-height: 36px;
-      max-width: 310px;
-    }
+  @include sm {
+    font-size: $lg;
+    line-height: 36px;
+    max-width: 310px;
+  }
 
-    @include md {
-      font-size: $xxl;
-      line-height: 48px;
-      max-width: 440px;
-    }
+  @include md {
+    font-size: $xxl;
+    line-height: 48px;
+    max-width: 440px;
+  }
 
-    @include lg {
-      font-size: $xxxl;
-      line-height: 58px;
-      max-width: 540px;
-    }
+  @include lg {
+    font-size: $xxxl;
+    line-height: 58px;
+    max-width: 540px;
   }
 }
 
-.popularBreedsLink {
+.subTitle {
   font-size: $xs;
   font-weight: 500;
   line-height: 15px;
@@ -191,10 +141,11 @@
 }
 
 .breedsLink {
+  @include flexRight;
+
   text-align: right;
   text-transform: uppercase;
   opacity: 0.6;
-  display: block;
   font-weight: 500;
   line-height: 14px;
   font-size: $xs;

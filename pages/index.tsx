@@ -21,7 +21,8 @@ const Home: FC<Breeds> = ({ breeds, fourBreeds }) => {
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-  const breeds: BreedModel[] = await fetch('https://api.thecatapi.com/v1/breeds')
+  // !const url = `${process.env.API_URL}/search?q=bengal`
+  const breeds: BreedModel[] = await fetch(process.env.API_URL || '')
     .then((res) => res.json())
     .then((data) => data)
     .catch((err) => err)
