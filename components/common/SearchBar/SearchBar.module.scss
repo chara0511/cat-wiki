@@ -33,6 +33,19 @@
     }
   }
 
+  @include sm {
+    padding: 12px 18px;
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+
+    & > input {
+      width: 100%;
+      font-size: $sm;
+      line-height: 20px;
+    }
+  }
+
   @include md {
     padding: 12px 18px;
     width: 250px;
@@ -63,14 +76,14 @@
   background-color: $white;
   color: $cannonBlack;
 
-  @include md {
+  @include sm {
     display: block;
     position: absolute;
-    padding: 1rem 1.75rem;
-    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
     width: 100%;
     max-height: 220px;
-    border-radius: 15px;
+    margin-top: 1rem;
 
     & > ul {
       overflow: auto;
@@ -81,10 +94,23 @@
         display: flex;
 
         & > a {
-          font-size: $md;
-          line-height: 22px;
+          font-size: $sm;
+          line-height: 20px;
           font-weight: 500;
           padding: 1rem 0;
+        }
+      }
+    }
+  }
+
+  @include md {
+    padding: 1rem 1.75rem;
+
+    & > ul {
+      & > li {
+        & > a {
+          font-size: $md;
+          line-height: 22px;
         }
       }
     }
