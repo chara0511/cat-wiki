@@ -3,6 +3,25 @@
 
 .content {
   padding: 1rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include xl {
+    flex-direction: row;
+  }
+}
+
+.body {
+  padding: 0 1rem;
+
+  @include md {
+    padding: 0 3rem;
+  }
+  @include lg {
+    padding: 0 5rem;
+  }
 
   & h2 {
     font-size: $xxl;
@@ -18,9 +37,12 @@
   }
 
   a {
+    display: flex;
+    align-items: center;
+    width: max-content;
     font-weight: bold;
     font-size: $xs;
-    line-height: 15px;
+    line-height: 16px;
     text-transform: uppercase;
     color: rgba(41, 21, 7, 0.6);
 
@@ -49,7 +71,6 @@
   grid-row-start: 1;
   grid-row-end: 3;
   display: flex;
-  border: 1px solid red;
 }
 
 .item2 {
@@ -58,7 +79,6 @@
   grid-row-start: 1;
   grid-row-end: 5;
   display: flex;
-  border: 1px solid red;
 }
 
 .item3 {
@@ -67,5 +87,4 @@
   grid-row-start: 3;
   grid-row-end: 6;
   display: flex;
-  border: 1px solid red;
 }

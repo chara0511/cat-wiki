@@ -1,17 +1,25 @@
+import { ArrowIcon } from '@components/icons'
 import Image from 'next/image'
 import s from './Section.module.scss'
 
 const Section = () => {
   return (
     <div className={s.content}>
-      <div>
+      <div className={s.body}>
         <h2>Why should you have a cat?</h2>
         <p>
           Having a cat around you can actually trigger the release of calming chemicals in your body
           which lower your stress and anxiety levels
         </p>
-        <a href="https://www.google.com.pe" target="_blank" rel="noopener noreferrer">
-          Read More -{'>'}
+        <a
+          href="https://www.helpguide.org/articles/healthy-living/joys-of-owning-a-cat.htm#:~:text=The%20health%20benefits%20of%20cats&text=They%20can%3A,and%20lower%20your%20blood%20pressure."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Read More</span>{' '}
+          <span>
+            <ArrowIcon />
+          </span>
         </a>
       </div>
 

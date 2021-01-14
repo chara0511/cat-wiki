@@ -66,7 +66,7 @@ const SearchBar = ({ id = 'search' }) => {
 
       {active && id === 'mobile-search' && (
         <Portal>
-          <div className={s.searchContentMobile}>
+          <div className={s.searchContentMobile} ref={ref}>
             <div className={s.searchMobile}>
               <input
                 type="text"
