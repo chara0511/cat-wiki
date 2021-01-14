@@ -28,13 +28,11 @@ export interface Breed {
 
 export interface Breeds {
   breeds: BreedModel[] | []
-  fourBreeds: BreedModel[] | []
   breed: Breed | any
 }
 
 const initialState: Breeds = {
   breeds: [],
-  fourBreeds: [],
   breed: [],
 }
 

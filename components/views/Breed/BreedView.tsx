@@ -8,7 +8,6 @@ interface Props {
   breed: Breeds | any
 }
 
-// ! try to remove first array element
 const BreedView: FC<Props> = ({ breed }) => {
   const { breeds, url }: Breed = breed[0]
 
@@ -97,7 +96,7 @@ const BreedView: FC<Props> = ({ breed }) => {
         {/* 278x278 */}
 
         <div className={s.footerPhotos}>
-          {breed.map((b: BreedModel) => (
+          {breed.slice(1).map((b: BreedModel) => (
             <div key={b.id}>
               <Image
                 src={b.url}

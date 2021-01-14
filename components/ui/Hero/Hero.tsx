@@ -1,17 +1,12 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { BreedModel } from '@components/views/context'
 import CatwikiLogo from 'public/CatwikiLogo'
 import { ArrowIcon } from '@components/icons'
 import { SearchBar } from '@components/common'
 import s from './Hero.module.scss'
 
-interface Props {
-  fourBreeds: BreedModel[]
-}
-
-const Hero: FC<Props> = ({ fourBreeds }) => {
+const Hero: FC = ({ children }) => {
   return (
     <div className={s.content}>
       <div className={s.header}>
@@ -50,26 +45,7 @@ const Hero: FC<Props> = ({ fourBreeds }) => {
           </a>
         </Link>
 
-        <div className={s.grid}>
-          {fourBreeds.map((catBreed) => (
-            <Link href={`/breeds/${catBreed.id}`} key={catBreed.id}>
-              <a>
-                <div>
-                  <Image
-                    src={catBreed.image.url}
-                    alt={catBreed.alt_names}
-                    width={220}
-                    height={220}
-                    className={s.rounded}
-                    objectFit="cover"
-                    quality={50}
-                  />
-                  <h2>{catBreed.name}</h2>
-                </div>
-              </a>
-            </Link>
-          ))}
-        </div>
+        <div className={s.grid}>{children}</div>
       </div>
     </div>
   )
