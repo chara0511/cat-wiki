@@ -15,7 +15,7 @@
   border-radius: 1.5rem;
   width: max-content;
 
-  & > input {
+  & > label > input {
     width: 50px;
     font-size: $xs;
     font-weight: 500;
@@ -39,7 +39,7 @@
     height: 50px;
     border-radius: 30px;
 
-    & > input {
+    & > label > input {
       width: 100%;
       font-size: $sm;
       line-height: 20px;
@@ -52,7 +52,7 @@
     height: 50px;
     border-radius: 30px;
 
-    & > input {
+    & > label > input {
       width: 100%;
       font-size: $md;
       line-height: 22px;
@@ -72,33 +72,29 @@
 }
 
 .searchResults {
-  display: none;
   background-color: $white;
   color: $cannonBlack;
+  display: block;
+  position: absolute;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  width: 100%;
+  max-height: 220px;
+  margin-top: 1rem;
 
-  @include sm {
-    display: block;
-    position: absolute;
-    padding: 1rem 1.5rem;
-    border-radius: 15px;
-    width: 100%;
-    max-height: 220px;
-    margin-top: 1rem;
+  & > ul {
+    overflow: auto;
+    max-height: 188px;
 
-    & > ul {
-      overflow: auto;
-      max-height: 188px;
+    & > li {
+      margin-bottom: 0.25rem;
+      display: flex;
 
-      & > li {
-        margin-bottom: 0.25rem;
-        display: flex;
-
-        & > a {
-          font-size: $sm;
-          line-height: 20px;
-          font-weight: 500;
-          padding: 1rem 0;
-        }
+      & > a {
+        font-size: $sm;
+        line-height: 20px;
+        font-weight: 500;
+        padding: 1rem 0;
       }
     }
   }
@@ -112,6 +108,70 @@
           font-size: $md;
           line-height: 22px;
         }
+      }
+    }
+  }
+}
+
+.searchContentMobile {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  width: 100%;
+  background-color: $white;
+  padding: 1rem;
+}
+
+.searchMobile {
+  @include flexBetween;
+
+  padding: 6px 14px;
+  color: $black;
+  border-radius: 1.5rem;
+  width: 100%;
+  background-color: $chineseWhite;
+  margin-bottom: 1rem;
+
+  & > input {
+    font-size: $md;
+    font-weight: 500;
+    line-height: 20px;
+    border: none;
+    color: $cannonBlack;
+    width: 100%;
+    background-color: inherit;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $cannonBlack;
+      font-weight: 500;
+    }
+  }
+
+  & > span {
+    margin-left: 12px;
+  }
+}
+
+.searchResultsMobile {
+  & > ul {
+    overflow: auto;
+    height: 100vh;
+    margin: 1rem;
+
+    & > li {
+      margin-bottom: 0.25rem;
+      display: flex;
+
+      & > a {
+        width: 100%;
+        font-size: $md;
+        line-height: 20px;
+        font-weight: 500;
+        padding: 1rem 0;
       }
     }
   }

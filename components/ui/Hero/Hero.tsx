@@ -27,7 +27,12 @@ const Hero: FC = ({ children }) => {
 
           <p className={s.description}>Get to know more about your cat breed</p>
 
-          <SearchBar />
+          <div className={s.searchBar}>
+            <SearchBar />
+          </div>
+          <div className={s.mobileSearchBar}>
+            <SearchBar id="mobile-search" />
+          </div>
         </div>
       </div>
 

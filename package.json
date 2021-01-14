@@ -19,6 +19,7 @@
     "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx"
   },
   "dependencies": {
+    "@reach/portal": "^0.12.1",
     "next": "10.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",
