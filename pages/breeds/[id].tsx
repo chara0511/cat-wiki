@@ -1,13 +1,7 @@
 import { FC } from 'react'
 import { BreedView } from '@components/views'
 import { BreedModel, Breeds } from '@components/views/context'
-import { GetStaticPaths, GetStaticProps } from 'next'
-
-const BreedPage: FC<Breeds> = ({ breed }) => {
-  return <BreedView breed={breed} />
-}
-
-export default BreedPage
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const breeds: BreedModel[] = await fetch('https://api.thecatapi.com/v1/breeds')
@@ -39,3 +33,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: { breed },
   }
 }
+
+const BreedPage: FC<Breeds> = ({ breed }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  return <BreedView breed={breed} />
+}
+
+export default BreedPage

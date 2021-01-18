@@ -24,6 +24,7 @@ export interface BreedModel {
 export interface Breed {
   breeds: BreedModel[]
   url: string
+  id: string
 }
 
 export interface Breeds {

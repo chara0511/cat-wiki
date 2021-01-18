@@ -9,7 +9,7 @@ interface Props {
 }
 
 const BreedView: FC<Props> = ({ breed }) => {
-  const { breeds, url }: Breed = breed[0]
+  const { breeds, url, id }: Breed = breed[0]
 
   return (
     <div className={s.content}>
@@ -20,7 +20,7 @@ const BreedView: FC<Props> = ({ breed }) => {
             width={375}
             height={375}
             quality={50}
-            alt="Breed cat"
+            alt={`${id} cat`}
             objectFit="cover"
             className={s.rounded}
           />
@@ -103,7 +103,7 @@ const BreedView: FC<Props> = ({ breed }) => {
                 width={280}
                 height={280}
                 quality={50}
-                alt="Breed cat"
+                alt={`${id} cat`}
                 objectFit="cover"
                 className={s.rounded}
               />
