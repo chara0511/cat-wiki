@@ -4,7 +4,7 @@ import { BreedModel, Breeds } from '@components/views/context'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const breeds: BreedModel[] = await fetch('https://api.thecatapi.com/v1/breeds')
+  const breeds: BreedModel[] = await fetch(process.env.API_URL || '')
     .then((res) => res.json())
     .then((data) => data)
     .catch((err) => err)
@@ -18,9 +18,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const breed = await fetch(
-    `https://api.thecatapi.com/v1/images/search?limit=8&breed_ids=${params!.id}`,
-  )
+  fetch(`${process.env.API_URL}` || '')
+  const breed = await fetch(`${process.env.API_URL_SEARCH}${params!.id}`)
     .then((res) => res.json())
     .then((data) => data)
     .catch((err) => err)

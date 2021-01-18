@@ -48,7 +48,6 @@ const Home: FC<Breeds> = ({ breeds }) => {
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-  // !const url = `${process.env.API_URL}/search?q=bengal`
   const breeds: BreedModel[] = await fetch(process.env.API_URL || '')
     .then((res) => res.json())
     .then((data) => data)
@@ -57,9 +56,6 @@ export const getStaticProps: GetStaticProps = async () => {
   if (!breeds) {
     return { notFound: true }
   }
-
-  // const randomInt = (random: number, min: number, max: number) =>
-  //   Math.floor(random * (max - min) + min)
 
   return { props: { breeds } }
 }
